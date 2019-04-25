@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: gateway
-          image: hsedjame/gateway:1.0
+          image: hsedjame/gateway-service
           ports:
             - containerPort: 8080
 ---

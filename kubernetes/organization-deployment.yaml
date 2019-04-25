@@ -16,9 +16,12 @@ spec:
     spec:
       containers:
         - name: organization
-          image: hsedjame/organization:1.0
+          image: hsedjame/organization-service
           ports:
             - containerPort: 8080
+          envFrom:
+            - configMapRef:
+                name: organization-configmap
           env:
             - name: MONGO_DATABASE
               valueFrom:

@@ -16,9 +16,12 @@ spec:
     spec:
       containers:
         - name: employee
-          image: hsedjame/employee:1.0
+          image: hsedjame/employee-service
           ports:
             - containerPort: 8080
+          envFrom:
+            - configMapRef:
+                name: employee-configmap
           env:
             - name: MONGO_DATABASE
               valueFrom:
